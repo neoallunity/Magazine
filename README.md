@@ -1,4 +1,5 @@
-# 🌟 Integral Philosophy Publishing System
+# Magazine (historical snapshot)
+
 
 **Modular Academic Content Processing Platform** - Split into focused subprojects
 
@@ -6,61 +7,54 @@
 
 This is the **main project** that orchestrates all subprojects:
 
-```
-integral-philosophy/
-├── 🧠 subprojects/integral-philosophy-core/     # Core processing engine
-├── 🌐 subprojects/integral-philosophy-web/      # Web interface & API
-├── 🛠️ subprojects/integral-philosophy-cli/     # Command-line tools
-├── 📚 subprojects/integral-philosophy-docs/    # Documentation
-├── 📚 subprojects/integral-philosophy-content/ # Sample content
-├── ⚙️ subprojects/integral-philosophy-config/ # Configuration
-├── 🚀 subprojects/integral-philosophy-deploy/  # Deployment
-└── 🧪 subprojects/integral-philosophy-tests/  # Testing suite
-```
+> **Magazine is a historical publishing snapshot.** The active codebase is the
+> [`integral-philosophy`](https://github.com/neoallunity/integral-philosophy) monorepo
+> with `modules/{cli,config,content,core,deploy,docs,tests,web}`. The eight former
+> `integral-philosophy-*` repositories are archived read-only.
 
 ## 🚀 Quick Start
 
 ### 🔄 Setup with Submodules
-\`\`\`bash
+```bash
 # Clone with submodules
-git clone --recursive https://github.com/dominicusin/integral-philosophy.git
+git clone --recursive https://github.com/neoallunity/integral-philosophy.git
 cd integral-philosophy
 
 # Or initialize submodules manually
 git submodule update --init --recursive
-\`\`\`
+```
 
 ### 🌟 Install Complete System
-\`\`\`bash
+```bash
 # Setup all subprojects
 ./setup-all.sh
 
 # Start complete system
 ./start-full.sh
-\`\`\`
+```
 
 ## 📦 Individual Subproject Usage
 
 ### 🧠 Core Engine
-\`\`\`bash
+```bash
 cd subprojects/integral-philosophy-core
 pip install -e ".[dev]"
 integral-core parse content.md --format md
-\`\`\`
+```
 
 ### 🌐 Web Interface  
-\`\`\`bash
+```bash
 cd subprojects/integral-philosophy-web
 pip install -e ".[dev]"
 integral-web --port 8000
-\`\`\`
+```
 
 ### 🛠️ CLI Tools
-\`\`\`bash
+```bash
 cd subprojects/integral-philosophy-cli
 pip install -e ".[dev]"
 integral-publisher process https://example.com --output ./results
-\`\`\`
+```
 
 ## 🏗️ Architecture
 
@@ -78,7 +72,7 @@ integral-publisher process https://example.com --output ./results
 ## 🔧 Development Workflow
 
 ### 🛠️ Individual Subproject Development
-\`\`\`bash
+```bash
 # Work on specific subproject
 cd subprojects/integral-philosophy-core
 git checkout -b feature/new-parser
@@ -87,21 +81,21 @@ npm run dev
 # Test integration
 cd ../integral-philosophy-tests
 pytest tests/integration/
-\`\`\`
+```
 
 ### 🔄 Cross-Subproject Testing
-\`\`\`bash
+```bash
 # Full integration tests
 ./run-integration-tests.sh
 
 # Docker development
 docker-compose -f docker-compose.dev.yml up
-\`\`\`
+```
 
 ## 📦 Installation Options
 
 ### 🎯 Complete Installation
-\`\`\`bash
+```bash
 # Install all subprojects
 ./install-all.sh
 
@@ -109,33 +103,33 @@ docker-compose -f docker-compose.dev.yml up
 ./install-core.sh       # Core engine only
 ./install-web.sh        # Web interface only
 ./install-cli.sh         # CLI tools only
-\`\`\`
+```
 
 ### 🐳 Docker Deployment
-\`\`\`bash
+```bash
 # Complete system
 docker-compose up -d
 
 # Individual services
 docker-compose up -d web api core
-\`\`\`
+```
 
 ## 🚀 Production Deployment
 
 ### ☸️ Kubernetes
-\`\`\`bash
+```bash
 # Deploy all services
 kubectl apply -f deploy/kubernetes/
 
 # Individual services
 kubectl apply -f deploy/kubernetes/web/
 kubectl apply -f deploy/kubernetes/api/
-\`\`\`
+```
 
 ### 🐳 Docker Swarm
-\`\`\`bash
+```bash
 docker stack deploy -c docker-compose.yml integral-philosophy
-\`\`\`
+```
 
 ## 📚 Documentation
 
